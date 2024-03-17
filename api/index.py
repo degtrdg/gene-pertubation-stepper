@@ -35,18 +35,18 @@ app.add_middleware(
 # Session state to store the state of the ProteinGraph and ProteinExplorerAgent
 session_state = {}
 
+
 @app.get("/")
 async def root():
     return {"message": "Hello World"}
+
 
 @app.post("/api/initialize")
 def initialize_protein_explorer(request: InitializeRequest):
     try:
         session_id = str(uuid4())  # Generate a unique session ID
-        # info_file_path = '../graph_db/9606.protein.info.v12.0.txt.gz'
-        # links_file_path = '../graph_db/9606.protein.links.v12.0.txt.gz'
-        info_file_path = '../graph_db/9606.protein.info.v12.0.txt'
-        links_file_path = '../graph_db/9606.protein.links.v12.0.txt'
+        info_file_path = './help/9606.protein.info.v12.0.txt'
+        links_file_path = './help/top_protein_links.csv'
         protein_graph = ProteinGraph(
             info_file_path, links_file_path, request.start_protein)
         protein_explorer = ProteinExplorerAgent(
@@ -63,6 +63,7 @@ def initialize_protein_explorer(request: InitializeRequest):
         )
         return {"session_id": session_id, "nodes": nodes, "edges": edges}
     except Exception as e:
+        print(e)
         raise HTTPException(status_code=500, detail=str(e))
 
 

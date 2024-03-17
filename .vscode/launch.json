@@ -29,8 +29,8 @@
       "type": "debugpy",
       "request": "launch",
       "module": "uvicorn",
-      "args": ["api.index:app", "--reload"],
-      "cwd": "${workspaceFolder}",
+      "args": ["index:app", "--reload"],
+      "cwd": "${workspaceFolder}/api",
       "jinja": true,
       "justMyCode": true,
       "env": {
