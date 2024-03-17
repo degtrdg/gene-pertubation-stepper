@@ -9,9 +9,8 @@ export default async function Page({
     query: string;
   };
 }) {
-  // const query = searchParams.query || "";
-  // const proteinNames = await getNames(query);
+  const query = searchParams.query || "";
+  const proteinNames = await getNames(query);
 
-  // return <MainGraphPage proteinNames={proteinNames} />;
-  return <div>test</div>;
+  return <MainGraphPage proteinNames={proteinNames} />;
 }

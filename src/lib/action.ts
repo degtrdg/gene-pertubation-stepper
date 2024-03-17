@@ -5,10 +5,7 @@ import { z } from "zod";
 
 export async function getNames(query: string) {
   "use server";
-  const file = await fs.readFile(
-    process.cwd() + "/public/protein_names.txt",
-    "utf8"
-  );
+  const file = await fs.readFile(process.cwd() + "./protein_names.txt", "utf8");
   const proteinNames = file.split("\n");
 
   const searchTerm = query || "";
