@@ -5,7 +5,7 @@ from fastapi.responses import StreamingResponse
 from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
-from help.main import ProteinGraph, ProteinExplorerAgent
+from api.help.main import ProteinGraph, ProteinExplorerAgent
 
 
 class InitializeRequest(BaseModel):
@@ -45,8 +45,8 @@ async def root():
 def initialize_protein_explorer(request: InitializeRequest):
     try:
         session_id = str(uuid4())  # Generate a unique session ID
-        info_file_path = './help/9606.protein.info.v12.0.txt'
-        links_file_path = './help/top_protein_links.csv'
+        info_file_path = './api/help/9606.protein.info.v12.0.txt'
+        links_file_path = './api/help/top_protein_links.csv'
         protein_graph = ProteinGraph(
             info_file_path, links_file_path, request.start_protein)
         protein_explorer = ProteinExplorerAgent(
