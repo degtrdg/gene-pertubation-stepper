@@ -12,5 +12,6 @@ export default async function Page({
   const query = searchParams.query || "";
   const proteinNames = await getNames(query);
 
-  return <MainGraphPage proteinNames={proteinNames} />;
+  // return <MainGraphPage proteinNames={proteinNames} />;
+  return <div>test</div>;
 }
