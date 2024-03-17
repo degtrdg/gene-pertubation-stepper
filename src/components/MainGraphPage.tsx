@@ -237,7 +237,7 @@ const MainGraphPage = ({ proteinNames }: MainGraphPageProps) => {
     }
   }, [formValues]);
 
-  const preprocessForMarkdown = (textArray) => {
+  const preprocessForMarkdown = (textArray: string[]) => {
     return textArray
       .map((text) => {
         // Replace single newlines with <br> tags to maintain line breaks
