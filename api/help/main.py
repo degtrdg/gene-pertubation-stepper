@@ -172,7 +172,7 @@ class ProteinExplorerAgent:
         self.model = model
         self.context = Context()
         self.system_prompt = self.clean_indent("""
-            You are a gene perturbation simulator for human cells. You are exploring the effects of perturbing genes in a protein interaction network. You will base your analyses with respect to information and conclusions you have seen so far.
+            You are a gene perturbation simulator for human cells. You are exploring the effects of perturbing genes in a protein interaction network. You will base your analyses with respect to information and conclusions you have seen so far. Use markdown syntax such as **** to highlight important points. 
             """)
         self.reasoner = StructuredReasoner(
             system_prompt=self.system_prompt, model=self.model)
