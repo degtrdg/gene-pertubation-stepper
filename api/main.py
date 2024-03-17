@@ -21,13 +21,13 @@ class ProteinGraph:
     def __init__(self, info_file_path, links_file_path, start_protein):
         # Load protein information
         self.protein_info = pd.read_csv(
-            # info_file_path, sep='\t', compression='gzip')
-            info_file_path, sep='\t')
+            info_file_path, sep='\t', compression='gzip')
+        # info_file_path, sep='\t')
 
         # Load protein links
         self.protein_links = pd.read_csv(
-            # links_file_path, sep=' ', compression='gzip')
-            links_file_path, sep=' ')
+            links_file_path, sep=' ', compression='gzip')
+        # links_file_path, sep=' ')
 
         # Create a mapping from preferred names to protein IDs
         self.name_to_id = dict(
@@ -270,10 +270,8 @@ def clean_indent(s):
 
 
 if __name__ == '__main__':
-    # info_file_path = '/Users/danielgeorge/Documents/work/bio/futurehouse/gene_stepper/graph_db/9606.protein.info.v12.0.txt.gz'
-    # links_file_path = '/Users/danielgeorge/Documents/work/bio/futurehouse/gene_stepper/graph_db/9606.protein.links.v12.0.txt.gz'
-    info_file_path = '/Users/danielgeorge/Documents/work/bio/futurehouse/gene_stepper/graph_db/9606.protein.info.v12.0.txt'
-    links_file_path = '/Users/danielgeorge/Documents/work/bio/futurehouse/gene_stepper/graph_db/9606.protein.links.v12.0.txt'
+    info_file_path = './9606.protein.info.v12.0.txt.gz'
+    links_file_path = './9606.protein.links.v12.0.txt.gz'
     protein_graph = ProteinGraph(
         info_file_path, links_file_path, start_protein='ARF5')
     protein_explorer = ProteinExplorerAgent(
