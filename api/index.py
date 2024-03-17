@@ -35,6 +35,9 @@ app.add_middleware(
 # Session state to store the state of the ProteinGraph and ProteinExplorerAgent
 session_state = {}
 
+@app.get("/")
+async def root():
+    return {"message": "Hello World"}
 
 @app.post("/api/initialize")
 def initialize_protein_explorer(request: InitializeRequest):
