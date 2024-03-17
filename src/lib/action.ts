@@ -2,11 +2,10 @@
 
 import { promises as fs } from "fs";
 import { z } from "zod";
+import { proteinNames } from "./protein_names";
 
 export async function getNames(query: string) {
   "use server";
-  const file = await fs.readFile(process.cwd() + "./protein_names.txt", "utf8");
-  const proteinNames = file.split("\n");
 
   const searchTerm = query || "";
   const filteredProteins = searchTerm
