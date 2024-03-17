@@ -43,7 +43,7 @@ const MainGraphPage = ({ proteinNames }: MainGraphPageProps) => {
   const baseUrl =
     process.env.NODE_ENV === "development"
       ? "http://localhost:8000"
-      : "https://your-production-url.com";
+      : "https://gene-pertubation-stepper-production.up.railway.app";
 
   const startStreamingText = (sessionId: string) => {
     setIsLoading(true); // Start loading when streaming begins
