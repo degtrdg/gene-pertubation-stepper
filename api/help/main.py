@@ -2,9 +2,9 @@ import pandas as pd
 import json
 import matplotlib.pyplot as plt
 import networkx as nx
-from api.context_management import Context
-from api.structured2 import StructuredReasoner
-from api import chatgpt
+from .context_management import Context
+from .structured2 import StructuredReasoner
+from . import chatgpt
 from openai import OpenAI, AsyncOpenAI, OpenAIError
 import os
 import dotenv

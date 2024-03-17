@@ -5,7 +5,7 @@ from fastapi.responses import StreamingResponse
 from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
-from api.main import ProteinGraph, ProteinExplorerAgent
+from help.main import ProteinGraph, ProteinExplorerAgent
 
 
 class InitializeRequest(BaseModel):
