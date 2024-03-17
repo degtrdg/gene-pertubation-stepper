@@ -162,8 +162,8 @@ class ProteinGraph:
 
 
 class ProteinExplorerAgent:
-    # def __init__(self, protein_graph: ProteinGraph, start_protein, start_interaction, stopping_condition, model='gpt-4-turbo-preview'):
-    def __init__(self, protein_graph: ProteinGraph, start_protein, start_interaction, stopping_condition, model='gpt-3.5-turbo'):
+    def __init__(self, protein_graph: ProteinGraph, start_protein, start_interaction, stopping_condition, model='gpt-4-turbo-preview'):
+        # def __init__(self, protein_graph: ProteinGraph, start_protein, start_interaction, stopping_condition, model='gpt-3.5-turbo'):
         self.protein_graph = protein_graph
         self.current_protein = start_protein
         self.start_protein = start_protein
