@@ -66,6 +66,14 @@ export function Combobox({ proteinNames, disabled }: ComboboxProps) {
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, [disabled]);
 
+  // On start if there are query params, set the value
+  useEffect(() => {
+    const query = searchParams.get("query");
+    if (query) {
+      setValue(query);
+    }
+  }, []);
+
   return (
     <div className="combobox-container flex flex-col items-start relative">
       <input
