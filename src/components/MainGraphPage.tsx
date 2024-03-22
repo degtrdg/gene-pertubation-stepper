@@ -311,7 +311,7 @@ const MainGraphPage = ({ proteinNames }: MainGraphPageProps) => {
         <div className="h-full bg-gray-200 overflow-auto">
           <div
             className={clsx(
-              "streaming-text-area p-5 h-full bg-gray-200 overflow-auto",
+              "streaming-text-area p-5 h-full bg-gray-200 overflow-auto prose",
               {
                 "flex justify-center items-center":
                   formSuccess && !streamingText.length,
